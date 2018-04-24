@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+const processc = require('child_process');
+let t = process.argv[2] + '.ts'
+let j = process.argv[2] + '.js'
+processc.exec('tsc ' + t, function (error, stdout, stderr) {
+  if (error !== null) {
+    console.log(error)
+  }
+  processc.exec('node ' + j, function (error, stdout, stderr) {
+    console.log(stdout)
+  })
+})
+
