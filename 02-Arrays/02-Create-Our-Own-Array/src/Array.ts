@@ -2,7 +2,7 @@
  * @Author: luo1o1o1o 
  * @Date: 2018-04-23 13:32:28 
  * @Last Modified by: luo1o1o1o
- * @Last Modified time: 2018-04-24 11:03:19
+ * @Last Modified time: 2018-04-24 11:07:49
  */
 class mArray {
   private data: number[]
@@ -29,6 +29,3 @@ class mArray {
     return this.size == 0
   }
 }
-
-
-new mArray().cArray()
