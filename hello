@@ -3,11 +3,25 @@ const processc = require('child_process');
 let t = process.argv[2] + '.ts'
 let j = process.argv[2] + '.js'
 processc.exec('tsc ' + t, function (error, stdout, stderr) {
-  if (error !== null) {
+  if (error) {
     console.log(error)
   }
-  processc.exec('node ' + j, function (error, stdout, stderr) {
+  if (stderr) {
+    console.log(stderr)
+  }
+  if (stdout) {
     console.log(stdout)
+  }
+  processc.exec('node ' + j, function (error, stdout, stderr) {
+    if (error) {
+      console.log(error)
+    }
+    if (stderr) {
+      console.log(stderr)
+    }
+    if (stdout) {
+      console.log(stdout)
+    }
   })
 })
 
